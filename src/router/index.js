@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VidispineVersion from '../components/VidispineVersion.vue';
-import Import from '../components/Import.vue';
+import Front from '../components/Front.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'import',
-    component: Import,
+    name: 'front',
+    component: Front,
   },
   {
     path: '/version',
