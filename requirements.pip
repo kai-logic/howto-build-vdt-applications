@@ -1,0 +1,24 @@
+# This file lists all required third-party applications that are needed to run this project.
+# Go into your virtualenv and then install all these apps in one row using pip as such:
+#     pip install -r requirements.pip
+
+django==2.0
+pyxb==1.2.4
+requests==2.17.1
+sphinx==1.4.9
+setuptools
+lxml==3.4.1
+
+# Webpack, for automatised workflow
+django-webpack-loader
+
+# Install your own packages:
+#     pip3 install --upgrade ~/vdt/vdt-python-sdk/dist/vdt_python_sdk-0.9.tar.gz
+
+# Install from git your own package:
+#     pip3 install -e git+git@git.vidispine.com:vdt-python-sdk.git#egg=vdt-python-sdk
+
+# Before pushing code you should make sure the new code has the correct structure:
+#     flake8 --max-line-length=100 app/
+flake8==3.5.0
+pep8-naming==0.4.1

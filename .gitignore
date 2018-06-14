@@ -1,0 +1,14 @@
+*.pyc
+*.egg-info
+yarn.lock
+docs/_build
+node_modules/*
+package-lock.json
+app/dist/*
+app/collected_static/*
+app/webpack-stats.json
+app/settings/local.py
+poi.dev.config.js
+yarn-error.log
+version.txt
+.idea

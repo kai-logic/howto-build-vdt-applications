@@ -1,0 +1,1 @@
+Any use of this software outside of the License Agreement is prohibited.

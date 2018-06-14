@@ -1,0 +1,36 @@
+{
+  "name": "howto-build-vdt-applications",
+  "description": "A Vidispine project",
+  "version": "1.0.0",
+  "author": "Filip Hallberg <filip@vidispine.com>",
+  "private": true,
+  "scripts": {
+    "start": "poi",
+    "build": "poi build --config poi.config.js",
+    "dj-docs": "make html --directory=docs/ && echo '\nStart with your favorite browser, ex: $ chrome docs/_build/html/index.html'"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@poi/plugin-eslint": "10.0.1",
+    "autoprefixer": "^8.4.1",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-vue": "^4.3.0",
+    "node-sass": "^4.7.2",
+    "poi": "^10.1.8",
+    "sass-loader": "^6.0.7",
+    "source-map-loader": "^0.2.3",
+    "webpack-bundle-tracker": "^0.3.0"
+  }
+}
