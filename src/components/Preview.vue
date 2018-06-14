@@ -24,6 +24,11 @@
           <VdtVideoPlayer
             v-if="itemType === 'video'"
             :shape="selectedShape"/>
+          <div class="shape-actions">
+            <ShapeActions
+              :item="item"
+              :shape="selectedShape"/>
+          </div>
           <VdtMetadata
             :asset="item"
             :rows="rows"/>
@@ -44,6 +49,7 @@
 // eslint-disable-next-line
 import { VdtShape, VdtMetadata, VdtImagePreview, VdtVideoPlayer } from '@vidispine/vdt-vue-components/es';
 import itemApi from '../api/item.api';
+import ShapeActions from './ShapeActions.vue';
 
 export default {
   name: 'Preview',
@@ -52,6 +58,7 @@ export default {
     VdtMetadata,
     VdtImagePreview,
     VdtVideoPlayer,
+    ShapeActions,
   },
   props: {
     itemId: {
@@ -107,8 +114,17 @@ export default {
 
 <style lang="scss" scoped>
 .preview {
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: auto;
+  background: #f5f5f5;
+  select {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .shape-actions {
+    margin: 1em 0;
+  }
 }
 </style>

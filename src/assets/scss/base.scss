@@ -1,8 +1,13 @@
 @import './variables';
 @import '~@vidispine/vdt-vue-components/es/index.css';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/utilities/';
+@import '~bootstrap/scss/_buttons';
+@import '~bootstrap/scss/_close';
+@import '~bootstrap/scss/_modal';
 
 html, body {
-  font-size: 62.5%;
+  font-size: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

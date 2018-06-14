@@ -39,6 +39,8 @@ export default {
 .items-list {
   width: 100%;
   height: 100vh;
+  overflow: auto;
+  box-shadow: 1px 0 1px 10px #000;
 }
 </style>
 

@@ -24,6 +24,5 @@ export default {
 .app{
   display: block;
   width: 100%;
-  padding: 5rem 0;
 }
 </style>
