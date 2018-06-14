@@ -1,4 +1,5 @@
 @import './variables';
+@import '~@vidispine/vdt-vue-components/es/index.css';
 
 html, body {
   font-size: 62.5%;
@@ -7,4 +8,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   color: $dark-color;
   height: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // 1
 }

@@ -16,16 +16,16 @@ module.exports = (options, req) => ({
   outDir: './app/dist',
   jsx: 'vue',
   fullBuild: false,
-  plugins: [
-    require('@poi/plugin-eslint')({
-      loaderOptions: {
-        exclude: /node_modules/,
-        configFile: '.eslintrc.js',
-        fix: true
-      },
-      command: ['develop', 'build']
-    })
-  ],
+  // plugins: [
+  //   require('@poi/plugin-eslint')({
+  //     loaderOptions: {
+  //       exclude: /node_modules/,
+  //       configFile: '.eslintrc.js',
+  //       fix: true
+  //     },
+  //     command: ['develop', 'build']
+  //   })
+  // ],
   chainWebpack(config, context) {
     // Extend webpack config with webpack-bundle-tracker for django-webpack-loader
     // to do its job when building for production
