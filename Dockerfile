@@ -24,12 +24,13 @@ COPY packaging/poi.config.js /opt/vidispine-content-viewer/
 # Packages
 COPY requirements.pip /opt/vidispine-content-viewer/
 COPY package.json /opt/vidispine-content-viewer/
+COPY yarn.lock /opt/vidispine-content-viewer/
+COPY package-lock.json /opt/vidispine-content-viewer/
 COPY packaging/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY packaging/uwsgi.ini /opt/vidispine-content-viewer/
 
 # Application
 COPY index.html /opt/vidispine-content-viewer/
-COPY version.txt /opt/vidispine-content-viewer/
 COPY manage.py /opt/vidispine-content-viewer/
 COPY .eslintrc.js /opt/vidispine-content-viewer/
 COPY src/ /opt/vidispine-content-viewer/src/
@@ -41,8 +42,6 @@ COPY vdt_python_sdk-0.9.tar.gz /opt/vidispine-content-viewer/
 COPY vdt-vue-components/ /opt/vidispine-content-viewer/vdt-vue-components/
 
 WORKDIR /opt/vidispine-content-viewer/
-
-RUN echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 RUN buildDeps='gcc git zlib1g-dev libxml2-dev libxml2-utils libxslt1-dev python3-pip python3-dev python3-setuptools'; \
     set -x \
