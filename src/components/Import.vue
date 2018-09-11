@@ -121,7 +121,11 @@ export default {
 .import {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  font-size: 2em;
+}
+.vdt-list-row__selected {
+  background-color: lightblue;
 }
 </style>
 
