@@ -2,7 +2,7 @@
 set -e
 
 export VIDISPINE_URL=$VIDISPINE_IP_PORT/API/
-export THE_NAMESERVER=`cat /etc/resolv.conf | grep "nameserver" | awk '{print $2}' | tr '\n' ' '`
+export THE_NAMESERVER=`cat /etc/resolv.conf | grep "nameserver " | awk '{print $2}' | tr '\n' ' '`
 
 if [ "$1" = 'server' ]; then
     sed -i "s|VIDISPINE_IP_PORT|$VIDISPINE_IP_PORT|g" /etc/nginx/sites-enabled/default

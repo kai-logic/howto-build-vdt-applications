@@ -25,7 +25,6 @@ COPY packaging/poi.config.js /opt/vidispine-content-viewer/
 COPY requirements.pip /opt/vidispine-content-viewer/
 COPY package.json /opt/vidispine-content-viewer/
 COPY yarn.lock /opt/vidispine-content-viewer/
-COPY package-lock.json /opt/vidispine-content-viewer/
 COPY packaging/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY packaging/uwsgi.ini /opt/vidispine-content-viewer/
 
