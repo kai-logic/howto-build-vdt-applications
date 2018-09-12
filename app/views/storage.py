@@ -71,9 +71,10 @@ class StorageImportablesView(JsonView):
                                 message=e.response.content.decode('utf-8'))), e.response.status_code
 
         returned_files = []
-        for file in files['element']:
-            if file['file']['state'] == state:
-                returned_files.append(file)
+        if files['hits'] != 0:
+            for file in files['element']:
+                if file['file']['state'] == state:
+                    returned_files.append(file)
         files['element'] = returned_files
         return files, 200
 
