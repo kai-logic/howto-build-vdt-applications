@@ -15,10 +15,14 @@ export default class Shape {
     shape.id = rawShape.id;
     const rawContainerComponent = rawShape.containerComponent;
 
-    for (let i = 0; i < rawShape.containerComponent.file.length; i += 1) {
-      for (let j = 0; j < rawShape.containerComponent.file[i].uri.length; j += 1) {
-        const uriPath = rawShape.containerComponent.file[i].uri[j].split('/APInoauth')[1];
-        rawContainerComponent.file[i].uri[j] = `/apinoauth${uriPath}`;
+    if (rawShape.containerComponent) {
+      for (let i = 0; i < rawShape.containerComponent.file.length; i += 1) {
+        if (rawShape.containerComponent.file[i].state !== 'LOST') {
+          for (let j = 0; j < rawShape.containerComponent.file[i].uri.length; j += 1) {
+            const uriPath = rawShape.containerComponent.file[i].uri[j].split('/APInoauth')[1];
+            rawContainerComponent.file[i].uri[j] = `/apinoauth${uriPath}`;
+          }
+        }
       }
     }
 

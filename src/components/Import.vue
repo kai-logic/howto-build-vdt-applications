@@ -20,7 +20,8 @@
       :columns="columns"
       :checkbox="true"
       :track-by="'id'"
-      :selected-assets="selectedAssets"/>
+      :selected-assets="selectedAssets"
+      :break-point-width="0"/>
     <button
       :disabled="selectedAssets.length < 1"
       @click="importFiles()">
@@ -121,7 +122,10 @@ export default {
 .import {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+.vdt-list-row__selected {
+  background-color: #66c2ff;
 }
 </style>
 

@@ -54,6 +54,7 @@ class StorageImportablesView(JsonView):
             matrix_params = json.loads(request.GET.get('matrix'))
             first = matrix_params.get('first', None)
             number = matrix_params.get('number', None)
+            state = matrix_params.get('state', 'CLOSED')
         except KeyError:
             return Storage(dict(content="No auth")), 401
         except ValueError:
@@ -61,7 +62,7 @@ class StorageImportablesView(JsonView):
 
         try:
             files = vdt_python_sdk.get_storage_importable(vsurl=settings.VSAPI_BASE, auth=auth,
-                                                          storage_id=storage_id,
+                                                          storage_id=storage_id, state=state,
                                                           first=first,
                                                           number=number,
                                                           accept='application/json')
@@ -69,6 +70,12 @@ class StorageImportablesView(JsonView):
             return Storage(dict(url=e.request.path_url,
                                 message=e.response.content.decode('utf-8'))), e.response.status_code
 
+        returned_files = []
+        if files['hits'] != 0:
+            for file in files['element']:
+                if file['file']['state'] == state:
+                    returned_files.append(file)
+        files['element'] = returned_files
         return files, 200
 
 
