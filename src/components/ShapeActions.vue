@@ -30,7 +30,8 @@
         :cost-estimate-url="transcodeUrl"
         :start-transcode-url="transcodeUrl"
         :job-status-url="jobUrl"
-        :abort-job-url="jobUrl"/>
+        :abort-job-url="jobUrl"
+        :poll-interval="4000"/>
     </b-modal>
     <b-modal
       id="QcModal"
@@ -45,7 +46,8 @@
         :cost-estimate-url="qcUrl"
         :start-qc-url="qcUrl"
         :job-status-url="jobUrl"
-        :abort-job-url="jobUrl"/>
+        :abort-job-url="jobUrl"
+        :poll-interval="4000"/>
     </b-modal>
     <b-modal
       id="ExportModal"
@@ -55,7 +57,11 @@
       <VdtShapeExport
         :item-id="item.metadata.id"
         :shape-id="shape.id"
-        :tag="shape.tag"/>
+        :tag="shape.tag"
+        :export-location-url="exportLocationUrl"
+        :start-export-url="startExportUrl"
+        :job-status-url="jobUrl"
+        :poll-interval="4000"/>
     </b-modal>
   </div>
 </template>
@@ -87,6 +93,8 @@ export default {
     return {
       transcodeUrl: '/api/transcode',
       qcUrl: '/api/vidinet/qc',
+      exportLocationUrl: '/api/export-location',
+      startExportUrl: '/api/shape-export',
       jobUrl: '/api/job/',
       tags: [],
       resources: [],
