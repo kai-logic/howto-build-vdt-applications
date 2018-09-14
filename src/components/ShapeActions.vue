@@ -22,7 +22,8 @@
       id="TranscodeModal"
       title="Transcode"
       button-size="md"
-      lazy>
+      lazy
+      size="lg">
       <VdtTranscode
         :item-id="item.metadata.id"
         :filename="item.metadata.filename"

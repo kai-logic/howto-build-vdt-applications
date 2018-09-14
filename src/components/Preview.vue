@@ -136,7 +136,7 @@ export default {
     width: 100%;
   }
 }
-.modal-md {
+.modal-sm, .modal-md, .modal-lg {
   color: #2a2a2a;
 }
 </style>
