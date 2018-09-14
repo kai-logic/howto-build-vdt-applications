@@ -1,20 +1,22 @@
 <template>
   <div class="import">
-    <h1>Import</h1>
-    <select
-      v-model="selectedStorage">
-      <option
-        disabled
-        value="">
-        Select a storage
-      </option>
-      <option
-        v-for="storage in storages"
-        :key="storage.id"
-        :value="storage.id">
-        {{ storage.name }}
-      </option>
-    </select>
+    <div class="header">
+      <h1>Import</h1>
+      <select
+        v-model="selectedStorage">
+        <option
+          disabled
+          value="">
+          Select a storage
+        </option>
+        <option
+          v-for="storage in storages"
+          :key="storage.id"
+          :value="storage.id">
+          {{ storage.name }}
+        </option>
+      </select>
+    </div>
     <VdtList
       :assets="files"
       :columns="columns"
@@ -22,11 +24,12 @@
       :track-by="'id'"
       :selected-assets="selectedAssets"
       :break-point-width="0"/>
-    <button
+    <b-btn
       :disabled="selectedAssets.length < 1"
+      variant="light"
       @click="importFiles()">
       Import
-    </button>
+    </b-btn>
   </div>
 </template>
 
@@ -123,13 +126,26 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #f5f5f5;
+  background: #2a2a2a;
   select {
     width: 100%;
   }
+  button {
+    margin: 1em 0 0 1em;
+  }
+}
+.vdt-list-row {
+  letter-spacing: -.5px;
+}
+.vdt-list__header--column {
+  color: #fff !important;
 }
 .vdt-list-row__selected{
-  background-color: lightblue;
+  background-color: #5a5a5a;
+}
+.vdt-bulk-boolean--checked {
+  color: #fff !important;
+  fill: #fff !important;
 }
 </style>
 

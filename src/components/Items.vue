@@ -1,6 +1,8 @@
 <template>
   <div class="items-list">
-    <h1>Items</h1>
+    <div class="header">
+      <h1>Items</h1>
+    </div>
     <VdtGrid
       :assets="assets"
       :title="'metadata.filename'"
@@ -35,12 +37,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .items-list {
   width: 100%;
   height: 100vh;
   overflow: auto;
   box-shadow: 1px 0 1px 10px #000;
+  .vdt-grid-item {
+    background: #3a539b;
+    color: #f1f1f1;
+  }
 }
 </style>
 

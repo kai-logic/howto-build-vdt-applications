@@ -31,15 +31,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .media-supply-chain-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   height: 100vh;
   overflow: auto;
   font-size: 1rem;
+  background: #3a3a3a;
   > div {
-    padding: 1em;
+    // padding: 1em;
+    color: #fff;
   }
+}
+.header {
+  padding: 0 .5em;
 }
 </style>

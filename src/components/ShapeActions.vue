@@ -3,18 +3,18 @@
     <b-btn
       v-b-modal.TranscodeModal
       size="md"
-      variant="dark">
+      variant="light">
       Transcode
     </b-btn>
     <b-btn
       v-b-modal.QcModal
-      variant="dark"
+      variant="light"
       size="md">
       Quality Control
     </b-btn>
     <b-btn
       v-b-modal.ExportModal
-      variant="dark"
+      variant="light"
       size="md">
       Export
     </b-btn>

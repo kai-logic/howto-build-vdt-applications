@@ -2,21 +2,23 @@
   <div class="preview">
     <div v-if="item.metadata">
       <div class="preview-item">
-        <h1>{{ `${item.metadata.filename} (${item.metadata.id})` }}</h1>
-        <select
-          v-model="selectedShape">
-          <option
-            disabled
-            value="">
-            Select a shape
-          </option>
-          <option
-            v-for="shape in item.shapes"
-            :key="shape.id"
-            :value="shape">
-            {{ shape.tag }}
-          </option>
-        </select>
+        <div class="header">
+          <h1>{{ `${item.metadata.filename} (${item.metadata.id})` }}</h1>
+          <select
+            v-model="selectedShape">
+            <option
+              disabled
+              value="">
+              Select a shape
+            </option>
+            <option
+              v-for="shape in item.shapes"
+              :key="shape.id"
+              :value="shape">
+              {{ shape.tag }}
+            </option>
+          </select>
+        </div>
         <div v-if="selectedShape">
           <VdtImagePreview
             v-if="itemType === 'image'"
@@ -112,19 +114,26 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .preview {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: auto;
-  background: #f5f5f5;
+  background: #2a2a2a;
   select {
     width: 100%;
     margin-bottom: 1em;
   }
-  .shape-actions {
-    margin: 1em 0;
+  .shape-actions, .vdt-metadata__wrapper, .preview-metadata {
+    padding: 1em;
+    .vdt-shape__wrapper {
+      background: rgba(#fff, .9);
+      color: #2a2a2a;
+    }
+  }
+  .vdt-image-preview__image {
+    width: 100%;
   }
 }
 </style>
