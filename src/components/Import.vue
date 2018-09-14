@@ -126,6 +126,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: auto;
   background: #2a2a2a;
   select {
     width: 100%;
