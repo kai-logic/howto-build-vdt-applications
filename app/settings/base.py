@@ -28,7 +28,7 @@ LANGUAGES = (
 DEFAULT_DB_ALIAS = "noDB"
 
 VS_USERNAME = 'admin'
-VS_PASSWORD = 'Vidispine1'
+VS_PASSWORD = '!Vidispine2019'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'q%yopvowyixb36)=ovnd*ss!%me%nadlb1e-=l^7la$ti^anez'
